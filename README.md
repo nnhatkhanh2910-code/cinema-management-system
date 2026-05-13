@@ -1,97 +1,291 @@
-# cinema-management-system
-PROJECT 08: MOVIE AND CINEMA ROOM MANAGEMENT SYSTEM 🎬
-Developed by DATCOM Lab
+# 🎬 Cinema Room & Movie Management System
 
-NEU-College of Technology, National Economics University
+<div align="center">
 
-Email: hung.tran@neu.edu.vn
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue?style=for-the-badge&logo=mysql)
+![Python](https://img.shields.io/badge/Backend-Python-yellow?style=for-the-badge&logo=python)
+![HTML](https://img.shields.io/badge/Frontend-HTML5-orange?style=for-the-badge&logo=html5)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-📌 Project Objective
-The objective of this project is to develop a robust database management system to efficiently manage movies, cinema rooms, screening schedules, customers, and ticket reservations. The system is designed to improve the booking experience, streamline cinema operations, and support automated report generation.
+</div>
 
-🛠 Tech Stack
-Database Management System: MySQL
+---
 
-Programming Language: Python
+# 📌 Project Overview
 
-Database Connector: mysql-connector-python
+The **Cinema Room & Movie Management System** is a comprehensive Database Management System (DBMS) designed to simulate a real-world cinema booking and management platform.
 
-📂 Project Structure
-Based on the repository organization:
+This project provides functionalities for:
 
-cinema_website/: Contains cinema_website.html for the web-based landing page.
+- 🎥 Movie management
+- 🏢 Cinema room management
+- 🗓 Screening schedule management
+- 👥 Customer management
+- 🎟 Ticket booking and cancellation
+- 📊 Revenue and occupancy reporting
 
-diagrams/: System design documents including:
+The system demonstrates advanced database design concepts, SQL optimization techniques, and Python–MySQL integration.
 
-er_diagram.png: Entity-Relationship model.
+---
 
-data_flow_diagram.png: System logic flow.
+# 🛠 Technology Stack
 
-python/: The application layer containing:
+| Component | Technology |
+|------------|------------|
+| Database | MySQL |
+| Backend | Python |
+| Connector | mysql-connector-python |
+| Frontend | HTML |
+| IDE | VS Code / PyCharm |
+| Database Tool | MySQL Workbench |
 
-main.py: Entry point for the Command-Line Interface (CLI).
+---
 
-config.py: Database connection settings.
+# 📂 Project Structure
 
-tickets.py: Logic for seat booking and cancellations.
+```plaintext
+CINEMA_PROJECT/
+│
+├── cinema_website/
+│   └── cinema_website.html
+│
+├── diagrams/
+│   ├── er_diagram.png
+│   ├── data_flow_diagram.png
+│   └── er_diagram.mwb
+│
+├── python/
+│   ├── main.py
+│   ├── config.py
+│   ├── db_connection.py
+│   ├── movies.py
+│   ├── rooms.py
+│   ├── screenings.py
+│   ├── tickets.py
+│   ├── customers.py
+│   ├── reports.py
+│   └── generate_data.py
+│
+├── sql/
+│   ├── 01_schema.sql
+│   ├── 02_sample_data.sql
+│   ├── 03_indexes_views.sql
+│   ├── 04_stored_procedures.sql
+│   ├── 05_functions_triggers.sql
+│   ├── 06_security.sql
+│   └── show_movies.csv
+│
+└── README.md
+```
 
-reports.py: Sales and occupancy rate generation.
+---
 
-sql/: Database implementation scripts:
+# 🚀 Main Features
 
-01_schema.sql: Table structures (Movies, Rooms, Customers, etc.).
+## 🎥 1. Movie & Cinema Management
 
-02_sample_data.sql: 510+ sample rows for testing.
+- Add, update, and delete movies
+- Manage cinema rooms
+- Create screening schedules
+- Update movie information and showtimes
 
-03_indexes_views.sql: Query optimization and summaries.
+---
 
-04_stored_procedures.sql: Automated booking logic.
+## 🎟 2. Ticket Booking System
 
-05_functions_triggers.sql: Occupancy calculations and overbooking prevention.
+- Real-time seat booking
+- Automatic seat availability checking
+- Ticket cancellation support
+- Booking validation system
 
-🚀 Main Functionalities
-Management: Full CRUD operations for movies, cinema rooms, and screening schedules.
+---
 
-Booking System: Interactive seat selection with real-time availability checks.
+## 🧠 3. Advanced Database Features
 
-Advanced DB Objects:
+### 🔹 Triggers
 
-Triggers: Automatically prevent overbooking.
+- Prevent overbooking
+- Ensure seat availability integrity
+- Maintain booking consistency
 
-Functions: Calculate revenue per screening and occupancy rates.
+### 🔹 Functions
 
-Stored Procedures: Automate the ticket reservation process.
+- Calculate revenue per screening
+- Compute occupancy rates
+- Generate analytical statistics
 
-Security: Role-based access control (Admin and Ticket Clerk roles).
+### 🔹 Stored Procedures
 
-⚙️ Setup and Installation
-1. Database Setup
-Execute the SQL scripts in the sql/ folder in numerical order (01 to 06) using MySQL Workbench or any SQL client.
+- Automate ticket booking workflows
+- Simplify transaction processing
+- Improve database consistency
 
-2. Python Environment
-Install the required dependency:
+### 🔹 Views & Indexes
 
-Bash
+- Optimize query performance
+- Create summarized reports
+- Improve search efficiency
+
+---
+
+# 🔐 Security System
+
+The project implements **Role-Based Access Control (RBAC)**.
+
+| Role | Permissions |
+|------|-------------|
+| Admin | Full database access |
+| Ticket Clerk | Booking and customer operations |
+
+Security scripts are included to manage database permissions and access control.
+
+---
+
+# 📊 Reporting System
+
+The system provides multiple analytical reports, including:
+
+- Revenue reports by movie
+- Occupancy rate reports
+- Customer booking statistics
+- Screening performance analysis
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone <your-repository-url>
+cd CINEMA_PROJECT
+```
+
+---
+
+## 2️⃣ Setup MySQL Database
+
+Run the SQL files in the following order:
+
+```plaintext
+01_schema.sql
+02_sample_data.sql
+03_indexes_views.sql
+04_stored_procedures.sql
+05_functions_triggers.sql
+06_security.sql
+```
+
+You can execute them using:
+
+- MySQL Workbench
+- MySQL CLI
+
+---
+
+## 3️⃣ Install Required Package
+
+```bash
 pip install mysql-connector-python
-3. Configuration
-Update your database credentials in python/config.py:
+```
 
-Python
+---
+
+## 4️⃣ Configure Database Connection
+
+Edit:
+
+```plaintext
+python/config.py
+```
+
+Example:
+
+```python
 db_config = {
-    'host': 'localhost',
-    'user': 'your_user',
-    'password': 'your_password',
-    'database': 'cinema_management'
+    "host": "localhost",
+    "user": "root",
+    "password": "your_password",
+    "database": "cinema_management"
 }
-4. Running the App
-Bash
+```
+
+---
+
+## 5️⃣ Run Application
+
+```bash
 cd python
 python main.py
-📊 Deliverables
-Comprehensive Report: Database design, implementation details, and screenshots.
+```
 
-SQL Scripts: Full schema, sample data, and advanced objects.
+---
 
-Python Code: Functional booking and reporting application.
+# 📦 Deliverables
 
-ER Diagram: Relational schema with PKs, FKs, and constraints.
+- ✅ Complete Database Design (ERD + DFD)
+- ✅ Full SQL Scripts
+- ✅ Python CLI Application
+- ✅ Sample Dataset (510+ records)
+- ✅ HTML Landing Page
+- ✅ Documentation
+
+---
+
+# 💡 Key Highlights
+
+- Real-world cinema management simulation
+- Fully normalized relational database design
+- Advanced SQL implementation:
+  - Triggers
+  - Stored Procedures
+  - Functions
+  - Views
+  - Indexes
+- Python + MySQL integration
+- Modular and scalable architecture
+
+---
+
+# 📈 Future Improvements
+
+Potential future enhancements:
+
+- Web-based booking interface
+- Online payment integration
+- QR-code ticket generation
+- Dashboard and analytics
+- RESTful API support
+- Multi-branch cinema management
+
+---
+
+# 🖼 Database Diagrams
+
+## ER Diagram
+
+```markdown
+Add image here:
+![ER Diagram](C:\Users\Laptop\Desktop\cinema_project\diagrams\er_diagram.png)
+```
+
+## Data Flow Diagram
+
+```markdown
+Add image here:
+![DFD](diagrams/data_flow_diagram.png)
+```
+
+---
+
+# 👨‍💻 Authors
+
+**DATCOM Lab**  
+NEU – College of Technology  
+National Economics University
+
+📧 hung.tran@neu.edu.vn
+
+---
+
+
